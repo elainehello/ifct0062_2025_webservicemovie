@@ -5,8 +5,9 @@ import com.elainevalles.ifct0062_2025_webservicemovie.model.Movie;
 import java.util.List;
 
 public interface MovieService {
-    public void create(Movie movie);
-    public void findById(String id);
-    public void findByName(String title);
+    public Movie create(Movie movie);
+    public void delete(Movie movie);
+    public Movie findById(String id);
+    public Movie findByName(String title);
     public List<Movie> findMoviesByName(String title);
 }

@@ -8,7 +8,8 @@ import java.util.List;
 
 @RepositoryRestResource
 public interface IMovieRepository extends JpaRepository<Movie, String> {
-    List<Movie> findByTitle(String title);
-    String findByDirector(String director);
+
+    public List<Movie> findOneByTitleContaining(String title);
+
 
 }
