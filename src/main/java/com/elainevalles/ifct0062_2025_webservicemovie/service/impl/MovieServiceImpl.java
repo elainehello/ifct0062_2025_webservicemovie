@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class MovieServiceImpl implements MovieService {
 
@@ -27,17 +28,17 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public Movie findById(String id) {
-        return iMovieRepository.findById(id).orElse(null);
+    public Movie findById(String imdbId) {
+        return iMovieRepository.findById(imdbId).orElse(null);
     }
 
     @Override
-    public Movie findByName(String title) {
-        return iMovieRepository.findOneByTitleContaining(title).stream().findFirst().orElse(null);
+    public Movie findByTitle(String title) {
+        return iMovieRepository.findFirstByTitleContaining(title).orElse(null);
     }
 
     @Override
-    public List<Movie> findMoviesByName(String title) {
-        return List.of();
+    public List<Movie> findMoviesByTitle(String title) {
+        return iMovieRepository.findByTitleContaining(title);
     }
 }
