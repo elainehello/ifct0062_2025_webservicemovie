@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 public class Movie {
     @Id
     @Column(name = "imdbid")  // Match the actual DB column name
-    private String imdbID;
+    private String imdbId;
 
     @Column(name = "title")
     private String title;
@@ -23,18 +23,18 @@ public class Movie {
     }
 
     public Movie(String imdbID, String title, String director, int year) {
-        this.imdbID = imdbID;
+        this.imdbId = imdbID;
         this.title = title;
         this.director = director;
         this.year = year;
     }
 
-    public String getImdbID() {
-        return imdbID;
+    public String getImdbId() {
+        return imdbId;
     }
 
-    public void setImdbID(String imdbId) {
-        this.imdbID = imdbId;
+    public void setImdbId(String imdbId) {
+        this.imdbId = imdbId;
     }
 
     public String getTitle() {
